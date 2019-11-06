@@ -15,6 +15,6 @@ do
 USER=`echo $i | awk -F";" '{ print $1 }'`
 PASS=`echo $i | awk -F";" '{ print $2 }'`
 
-touch $USER"_code.txt"
+rm $USER"_code.txt"
 
 done
