@@ -22,13 +22,17 @@ chown $USER /home/$USER
 # déploiement des fichiers de jeu
 mkdir -p /home/$USER/secret
 mkdir -p /home/$USER/source
-lien = $USER"_code.txt"
-cp lien /home/$USER/secret
+touch $USER"_code.txt"
+"Bienvenue dans le premier fichier du jeu :\n
+la première brique du mot de passe c'est...\n
+Espace, "
 chmod -R 744 /home/$USER
+chmod -R 644 /home/$USER/secret
 chown -R $USER /home/$USER
 if [$USER = "turing"]
 then
-		cp mot_final.txt /home/$USER/secret
+	chmod -R 700 /home/$USER
+	cp mot_final.txt /home/$USER/secret
 fi
 done
 
