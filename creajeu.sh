@@ -25,7 +25,7 @@ mkdir -p /home/$USER/source
 touch $USER"_code.txt"
 "Bienvenue dans le premier fichier du jeu :\n
 la première brique du mot de passe c'est...\n
-Espace, "
+\"Espace,\" ... "
 chmod -R 744 /home/$USER
 chmod -R 644 /home/$USER/secret
 chown -R $USER /home/$USER

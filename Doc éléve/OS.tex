@@ -1,0 +1,67 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage{calc}
+\usepackage{xcolor}
+\usepackage[utf8x]{inputenc}
+\usepackage{dirtree}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts,amssymb}
+\usepackage[margin=1cm,includeall]{geometry}
+\parindent=0cm
+\usepackage[french,ruled]{algorithm2e}
+\usepackage{listings}
+\usepackage{array,multirow,makecell}
+\usepackage{colortbl}
+\setcellgapes{1pt}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{appendix}
+\makegapedcells
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+\fancyhead[R]{Première, Spécialité Numérique et Sciences Informatiques }
+\fancyhead[L]{\includegraphics[scale=0.8]{logo.png}}
+\fancyfoot[C]{Séquence 4 : Systèmes d'exploitation}
+\fancyfoot[R]{Page \thepage}
+\fancyfoot[L]{\includegraphics[scale=0.20]{cc.png}} 
+\pagestyle{fancy}
+
+\title{Système d'exploitation}
+\author{J. ~\textsc{Devalette}}
+\date{}
+
+\begin{document}
+	\maketitle
+	\thispagestyle{fancy}
+\section{Principes Généraux}
+\noindent\fcolorbox{black}{gray!30}{\parbox{\linewidth-2\fboxrule-2\fboxsep}
+	{Un système d'exploitation est un programme ou un ensemble de programmes dont le but est de gérer les ressources matérielles et logicielles d'un ordinateur }}
+
+\section{L'arborescence de fichiers}
+\dirtree{%
+	.1 / \DTcomment{répertoire racine}.
+	.2 bin \DTcomment{contient les commandes de base}.
+	.2 etc \DTcomment{contient les fichiers de configurations sytème}.
+	.2 home \DTcomment{contient les répertoires personnels des utilisateurs }.
+	.3 Alice \DTcomment{répetoire personnel d'Alice}.
+	.4 Documents.
+	.5 \textit{cours.pdf}.
+	.5 \textit{notes.odt}.
+	.4 Photos.
+	.5 \textit{img1.jpg}.
+	.5 \textit{img2.jpg}.
+	.3 Bob.
+	.4 Documents.
+	.5 \textit{encspecs.zip}.
+	.2 tmp\DTcomment{contient les fichiers temporaires}.
+}
+
+\section{Le Shell}
+\begin{lstlisting}[language=bash]
+alice$ id
+\end{lstlisting}
+\end{document}
