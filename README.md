@@ -1,5 +1,5 @@
 # NSI Bloc 3
-Un escape game pour apprendre la ligne de commande
+# Un escape game pour apprendre la ligne de commande #
 
 ## Objectifs liès au programme de première Spé NSI
 
@@ -19,4 +19,7 @@ Les postes clients doivent pouvoir se connecter en ssh sur la raspberry :
 
  - le plus simple en ligne de commande `ssh nom_d_utilisateur@IP_raspberry`
  - en utilisant un outil comme PUTTY par exemple
+
+## 2 Scénario de la séquence
+Les élèves disposent d'un login/mdp sur la raspberry, il doit rechercher/déplacer/copier/exécuter différents fichiers en ligne de commande qui vont leur permettre de recomposer le mot de passe du l'utilisateur Turing qui va leur permettre de trouver le code final.
 
