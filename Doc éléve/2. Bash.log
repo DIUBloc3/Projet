@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.24)  1 DEC 2019 18:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.24)  2 DEC 2019 21:23
 entering extended mode
 **"./2. Bash.tex"
 ("2. Bash.tex"
 LaTeX2e <2019-10-01>
 ("D:\Program Files\MiKTeX 2.9\tex/latex/base\article.cls"
 Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
-("D:\Program Files\MiKTeX 2.9\tex/latex/base\size12.clo"
-File: size12.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
+("D:\Program Files\MiKTeX 2.9\tex/latex/base\size10.clo"
+File: size10.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
 )
 \c@part=\count80
 \c@section=\count81
@@ -509,19 +509,19 @@ LaTeX Info: Redefining \up on input line 53.
 * v-part:(T,H,B)=(28.45274pt, 788.14136pt, 28.45274pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=495.60239pt
+* \textwidth=472.60239pt
 * \textheight=721.14136pt
 * \oddsidemargin=-43.81725pt
 * \evensidemargin=-43.81725pt
 * \topmargin=-43.81725pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=12.0pt
+* \topskip=10.0pt
 * \footskip=30.0pt
-* \marginparwidth=35.0pt
-* \marginparsep=10.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -548,38 +548,35 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ("D:\Program Files\MiKTeX 2.9\tex/latex/ucs\uni-0.def"
 File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 )
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 8
-4.
+("D:\Program Files\MiKTeX 2.9\tex/latex/listings\lstlang1.sty"
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+)
+LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 9
+5.
 
 ("D:\Program Files\MiKTeX 2.9\tex/latex/base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-("D:\Program Files\MiKTeX 2.9\tex/latex/listings\lstlang1.sty"
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
-("D:\Program Files\MiKTeX 2.9\tex/latex/listings\lstlang1.sty"
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
 <logo.png, id=1, 57.21375pt x 31.91925pt>
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 92.
+Package pdftex.def Info: logo.png  used on input line 101.
 (pdftex.def)             Requested size: 45.77104pt x 25.53542pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
-Make it at least 29.88545pt.
+Make it at least 29.13545pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
 <cc.png, id=2, 404.51125pt x 141.52875pt>
 File: cc.png Graphic file (type png)
 <use cc.png>
-Package pdftex.def Info: cc.png  used on input line 92.
+Package pdftex.def Info: cc.png  used on input line 101.
 (pdftex.def)             Requested size: 80.9008pt x 28.30524pt.
 
 Package Fancyhdr Warning: \footskip is too small (30.0pt): 
-Make it at least 33.65527pt.
+Make it at least 32.90527pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
@@ -588,37 +585,89 @@ This may cause the page layout to be inconsistent, however.
  <./logo.png> <./cc.png (PNG copy)>]
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 130.
+Package pdftex.def Info: logo.png  used on input line 171.
 (pdftex.def)             Requested size: 45.77104pt x 25.53542pt.
 File: cc.png Graphic file (type png)
 <use cc.png>
-Package pdftex.def Info: cc.png  used on input line 130.
+Package pdftex.def Info: cc.png  used on input line 171.
 (pdftex.def)             Requested size: 80.9008pt x 28.30524pt.
- [2] ("2. Bash.aux") ) 
+ [2]
+("D:\Program Files\MiKTeX 2.9\tex/latex/ucs\uni-32.def"
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+Overfull \hbox (8.64433pt too wide) in paragraph at lines 181--228
+[][] 
+ []
+
+
+Overfull \hbox (8.64433pt too wide) in paragraph at lines 229--236
+[][] 
+ []
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 236.
+(pdftex.def)             Requested size: 45.77104pt x 25.53542pt.
+File: cc.png Graphic file (type png)
+<use cc.png>
+Package pdftex.def Info: cc.png  used on input line 236.
+(pdftex.def)             Requested size: 80.9008pt x 28.30524pt.
+[3]
+Overfull \hbox (2.3669pt too wide) in paragraph at lines 244--245
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (2.3669pt too wide) in paragraph at lines 247--248
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+("D:\Program Files\MiKTeX 2.9\tex/latex/ucs\uni-33.def"
+File: uni-33.def 2013/05/13 UCS: Unicode data U+2100..U+21FF
+)
+Overfull \hbox (8.64433pt too wide) in paragraph at lines 237--252
+[][] 
+ []
+
+
+Overfull \hbox (8.64433pt too wide) in paragraph at lines 253--272
+[][] 
+ []
+
+File: logo.png Graphic file (type png)
+<use logo.png>
+Package pdftex.def Info: logo.png  used on input line 279.
+(pdftex.def)             Requested size: 45.77104pt x 25.53542pt.
+File: cc.png Graphic file (type png)
+<use cc.png>
+Package pdftex.def Info: cc.png  used on input line 279.
+(pdftex.def)             Requested size: 80.9008pt x 28.30524pt.
+[4] ("2. Bash.aux") ) 
 Here is how much of TeX's memory you used:
- 10298 strings out of 492452
- 145391 string characters out of 3129801
- 452400 words of memory out of 3000000
- 14487 multiletter control sequences out of 15000+200000
- 17596 words of font info for 53 fonts, out of 3000000 for 9000
+ 10753 strings out of 492452
+ 150338 string characters out of 3129801
+ 445800 words of memory out of 3000000
+ 14936 multiletter control sequences out of 15000+200000
+ 16688 words of font info for 50 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,17n,51p,363b,1987s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\JOCELIN\AppData\Local\MiKTeX\2.9\fonts/pk/ljfo
-ur/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\JOCELIN\AppData\Local\MiKTeX\2.9\f
-onts/pk/ljfour/jknappen/ec/dpi600\ecit1200.pk> <C:\Users\JOCELIN\AppData\Local\
-MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecti1200.pk> <C:\Users\JOCELIN\Ap
-pData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk> <C:\User
-s\JOCELIN\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.
-pk> <C:\Users\JOCELIN\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi6
-00\ecbx1728.pk> <C:\Users\JOCELIN\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jkna
-ppen/ec/dpi600\ecrm1440.pk> <C:\Users\JOCELIN\AppData\Local\MiKTeX\2.9\fonts/pk
-/ljfour/jknappen/ec/dpi600\ecrm2074.pk> <C:\Users\JOCELIN\AppData\Local\MiKTeX\
-2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk><D:/Program Files/MiKTeX 2.9
-/fonts/type1/public/amsfonts/cm/cmmi12.pfb><D:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmsy10.pfb>
-Output written on "2. Bash.pdf" (2 pages, 125020 bytes).
+ 46i,16n,46p,447b,1196s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\JOCELIN\AppData\Local\MiKTeX\2.9\fonts/pk/ljfou
+r/jknappen/ec/dpi600\ecit1000.pk> <C:\Users\JOCELIN\AppData\Local\MiKTeX\2.9\fo
+nts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\JOCELIN\AppData\Local\M
+iKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\JOCELIN\App
+Data\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1000.pk> <C:\Users
+\JOCELIN\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.p
+k> <C:\Users\JOCELIN\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecbx1440.pk> <C:\Users\JOCELIN\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknap
+pen/ec/dpi600\ecrm1200.pk> <C:\Users\JOCELIN\AppData\Local\MiKTeX\2.9\fonts/pk/
+ljfour/jknappen/ec/dpi600\ecrm1728.pk> <C:\Users\JOCELIN\AppData\Local\MiKTeX\2
+.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk><D:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmmi12.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb>
+Output written on "2. Bash.pdf" (4 pages, 151641 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
+ 329 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

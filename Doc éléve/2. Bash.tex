@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,10pt]{article}
 \usepackage{graphicx}
 \usepackage{calc}
 \usepackage{xcolor}
@@ -58,9 +58,20 @@
 \noindent\fcolorbox{black}{gray!30}{\parbox{\linewidth-2\fboxrule-2\fboxsep}
 	{Quelque que soit la distribution de Linux, il existe une application appelé $terminal$ qu'on peut lancer et l'interpréteur de commandes avec lequel on interagit est le $bash$. }}
 \section{Se connecter sur la Raspberry}
-blavle
+	\subsection{Secure Shell : SSH}
+	\setlength{\parindent}{8ex}Secure Shell (SSH) est à la fois un programme informatique et un protocole de communication sécurisé. Le protocole de connexion impose un échange de clés de chiffrement en début de connexion.
+	\subsection{Connexion SSH}
+	Pour se connecter sur la raspberry depuis la ligne de commande Windows:
+	\begin{lstlisting}[language=sh, frame = single]
+	C:\> ssh login@IP_raspberry
+	\end{lstlisting}
 \section{L'arborescence de fichiers}
-\setlength{\parindent}{8ex}Dans un système Unix, on dispose d'une \textbf{arborescence de fichiers} encrée sur $/$ la racine du système de fichiers.
+\setlength{\parindent}{8ex}Dans un système Unix, on dispose d'une \textbf{arborescence de fichiers} ancrée sur $/$ la racine du système de fichiers.
+
+Dans un système linux la référence au fichier s'appelle un chemin. Dans un chemin le nom des répertoires et des fichiers sont séparés par un "/". Il existe deux types de chemin : absolu et relatif.
+
+Le chemin absolu se base sur la racine de l'arborescence et commence par "/" par exemple :
+\newline $/home/utilisateur/<dossier>/<fichier>$.
 \dirtree{%
 	.1 / \DTcomment{répertoire racine}.
 	.2 bin \DTcomment{contient les commandes de base}.
@@ -83,48 +94,186 @@ blavle
 	.2 var\DTcomment{Données fréquemment utilisées}.	
 }
 
-\section{Le Shell, les commandes de base}
-	\subsection{Lister les fichiers}
-	la commande $ls$ permet de lister les fichiers (ls = liste)
-\begin{lstlisting}[language=bash, frame = single]
-# Lister les fichiers contenus dans le répertoire
-alice@raspberry: ~$ ls 
-cours.pdf note.pdf divers feedback
+\section{Droits et permissions sous UNIX}
+\subsection{Le monde selon UNIX}
+\setlength{\parindent}{8ex}UNIX sépare le monde en 3 catégories du point de vue des droits :
+\begin{itemize}
+	\item l'utilisateur (user)
+	\item le groupe (groupe)
+	\item le reste du monde (others)
+\end{itemize}
+\subsection{Lecture des droits d'un fichier}
+La commande $ls -l$ permet de lister le contenu  d'un répertoire en affichant les droits : 
+	\begin{lstlisting}[language=sh, frame = single]
+alice@raspberry: ~$ ls  -l
+-rwxrw-r--  1 alice nsi   8503 sept. 29 13:58  script.sh
 \end{lstlisting}
-$cours.pdf$ et $note.pdf$ sont des fichiers, $divers$ est un répertoire.
-
-Pour obtenir plus d'information, utilisez l'option -l (pour version longue) :
+\setlength{\parindent}{8ex}On voit que ce fichier $script.sh$ appartient à $alice$ et au groupe $nsi$
+\newline
+La partie $-rwxrw-r--$ indique les droits du fichier, en omettant le tiret du début, puis en découpant en 3 parties :
+\begin{itemize}
+	\item $rwx$ : concerne l'utilisateur
+	\item $rw-$ : concerne le groupe
+	\item $r--$ : concerne le reste du monde
+\end{itemize}
+Chaque partie est elle-même composée de 3 lettres :
+\begin{itemize}
+	\item $r$ : le fichier est accessible en lecture (read)
+	\item $w$ : le fichier est accessible en écriture (write)
+	\item $x$ : le fichier est exécutable en tapant en ligne de commande $./script.sh$
+\end{itemize}
+\subsection{Lecture des droits d'un répertoire}
+La commande $ls -l$ permet aussi de lister les sous-répertoires contenus dans le répertoire courant :
 \begin{lstlisting}[language=sh, frame = single]
-# Lister les fichiers contenus dans le repertoire
 alice@raspberry: ~$ ls  -l
 # cours.pdf et note.pdf sont des fichiers
--rw-rw-r--  1 alice nsi   8503 sept. 29 13:58  cours.pdf
--rw-r--r--  1 alice nsi   1503 sept. 20 11:38  note.pdf
-# divers est un repertoire, notez le 'd' en debut de ligne
-drwx------ 18 alice nsi   4096 nov.  21 19:40  divers
+drwxr----- 18 alice nsi   4096 nov.  21 19:40  documents
+\end{lstlisting} 
+Le $d$ en début de ligne indique que $documents$ est un répertoire, que ce répertoire appartient à l'utilisateur $alice$ et au groupe $nsi$.
+\newline Évidemment un répertoire ne peut pas être exécutable, le $x$ indique simplement qu'il est possible de rentrer dedans.
+\subsection{Changer les droits}
+\subsubsection{La commande $chmod$}
+Seul le propriétaire d'un fichier ou d'un répertoire peut en changer les droits. Il existe cependant un autre utilisateur capable de le faire c'est le super-utilisateur : $root$.
+ \newline
+Pour changer les droits on utilise la commande $chmod$. On donne ci-dessous quelques exemples d'utilisation de cette commande qui change les droits sur le fichiers $cours.pdf$ :
+\newline
+\begin{tabular}{|c|l|}
+	\hline
+	syntaxe & changement des droits \\
+	\hline
+	\begin{lstlisting}[language=sh,]
+	chmod g+r cours.pdf
+	\end{lstlisting}  & donne les droits en lecture au groupe (g) \\
+	\begin{lstlisting}[language=sh,]
+	chmod u+x cours.pdf
+	\end{lstlisting} & donne les droits en exécution à l'utilisateur (u) \\
+	\begin{lstlisting}[language=sh,]
+	chmod o-r cours.pdf
+	\end{lstlisting} & retire les droits en lecture aux autres (o)\\
+		\begin{lstlisting}[language=sh,]
+	chmod ugo+r cours.pdf
+	\end{lstlisting} & donne les droits en lecture à tout le monde (ugo)\\
+	\hline
+\end{tabular}
+\subsubsection{Droits sous forme numérique...}
+Plutôt que d'utiliser les droits symboliques ( système ugo ), il est possible d'attribuer des droits sur un fichier ou sur un répertoire :
+\newline
+\begin{tabular}{lccc}
+	droits symboliques & rwx & r-x & rw-\\
+	droits numériques & 111&101&110\\
+	en décimal &7&5&6
+\end{tabular}
+Par exemple :
+	\begin{lstlisting}[language=sh, frame = single]
+alice@raspberry: ~$ chmod 754 mon_fichier.py
+# donne les droits rwxrw-r-- au fichier.
 \end{lstlisting}
-\subsection{Changer de répertoire}
-La commande $cd$ vous permet de changer de répertoire (cd = change directory). Quand vous ouvrez un terminal en mode utilisateur vous êtes dans votre répertoire local (/home/utilisateur).
+\subsection{Exécuter un fichier}
+Pour exécuter un fichier deux solutions :
+\begin{itemize}
+	\item le faire précéder de $./$ devant son nom : $./script.sh$
+	\item le faire précéder de l'application qui sert à l'exécuter : $python$  $script.py$
+\end{itemize}
+\section{Le Shell, les commandes de base}
 
+\subsection{Commandes de gestion de fichiers et répertoires}
+\setlength{\parindent}{0ex}
+\begin{tabular}{|c|p{0.35\textwidth}|p{0.49\textwidth}|}
+		\hline \rowcolor{lightgray}commande & description & options et exemples\\
+		\hline \textbf{ls} & Liste le contenu d’un répertoire. Si aucun argument n’est donné, c’est le contenu du répertoire courant qui est affiché. Sinon, c’est le contenu des répertoires indiqués en paramètres qui est listé. & -a : liste également les fichiers et répertoires cachés
+		
+		-l : liste en plus les attributs des fichiers
+		
+		\begin{lstlisting}[language=sh, gobble=8, tabsize=4, showstringspaces=false]
+		alice@raspberry: ~$ ls -l
+		\end{lstlisting}\\
+		\hline \textbf{cd} & Change le dossier/répertoire courant & Se déplace dans le répertoire passé en paramètre :
+		\begin{lstlisting}[language=sh, gobble=8, tabsize=4, showstringspaces=false]
+		alice@raspberry: ~$ cd <rep>
+		\end{lstlisting}
+		se déplace dans le répertoire personnel : 
+		\begin{lstlisting}[language=sh, gobble=8, tabsize=4, showstringspaces=false]
+		alice@raspberry: ~$ cd 
+		\end{lstlisting}
+		remonte dans le répertoire parent : 
+		\begin{lstlisting}[language=sh, gobble=8, tabsize=4, showstringspaces=false]
+		alice@raspberry: ~$ cd ..
+		\end{lstlisting}
+		\\
+		\hline \textbf{mkdir} & crée le répertoire indiqué en paramétre (Make Directory) & \begin{lstlisting}[language=sh, gobble=8, tabsize=4, showstringspaces=false]
+		alice@raspberry: ~$ mkdir <rep>
+		\end{lstlisting}\\
+		\hline \textbf{rmdir} & Supprime le répertoire indiqué . Le répertoire doit être vide. (Remove Directory) & \begin{lstlisting}[language=sh, gobble=8, tabsize=4, showstringspaces=false]
+		alice@raspberry: ~$ rmdir <rep>
+		\end{lstlisting}\\
+		\hline \textbf{rm} & Supprime le fichier passé en paramètre. ATTENTION :
+		aucun moyen de les récupérer ensuite. (Remove) & -i : demande confirmation avant chaque effacement
+		
+		-r : effacement récursif.
+		\begin{lstlisting}[language=sh, gobble=8, tabsize=4, showstringspaces=false]
+		alice@raspberry: ~$ rm -r <rep>
+		\end{lstlisting}
+		permet d’effacer le répertoires indiqué et tout ce qu’il contient\\
+		\hline \textbf{cp} & Copie de fichiers et de répertoires. (Copy) & crée un nouveau fichier de chemin <fich2> et copie dedans le contenu de <fich1>. Si <fich2> existait déjà, il est écrasé :
+		\begin{lstlisting}[language=sh, gobble=8, tabsize=4, showstringspaces=false]
+		alice@raspberry: ~$ cp <fich1> <fich2>
+		\end{lstlisting}\\
+		\hline \textbf{mv} &  Déplacer/renommer des fichiers et des répertoires. (Move) & déplace le fichier <fich1> pour que son chemin devienne <fich2> :
+		\begin{lstlisting}[language=sh, gobble=8, tabsize=4, showstringspaces=false]
+		alice@raspberry: ~$ mv <fich1> <fich2>
+		\end{lstlisting}\\
+		\hline
+		
+\end{tabular}
 
-Dans un système linux la référence au fichier s'appelle un chemin. Dans un chemin le nom des répertoires et des fichiers sont séparés par un "/". Il existe deux types de chemin : absolu et relatif.
-
-
-Le chemin absolu se base sur la racine de l'arborescence et commence par "/" : ex : /home/utilisateur/<dossier>/<fichier>.
+\begin{tabular}{|c|p{0.35\textwidth}|p{0.49\textwidth}|}
+	\hline \rowcolor{lightgray}commande & description & options et exemples\\
+	\hline \textbf{touch} & Crée des fichiers vides. Si les fichiers existent déjà, alors leur date de dernière modification est mise à la date courante. & par exemple : \begin{lstlisting}[language=sh, gobble=3, tabsize=4, showstringspaces=false]
+	alice@raspberry: ~$ touch <fich1> 
+	\end{lstlisting}\\
+	\hline
+\end{tabular}
+\subsection{Commandes sur les fichiers}
+\begin{tabular}{|c|p{0.35\textwidth}|p{0.49\textwidth}|}
+	\hline \rowcolor{lightgray}commande & description & options et exemples\\
+	\hline \textbf{cat} &  Affiche le contenu du (ou des) fichiers les uns à la suite des
+	autres. (Catenate) & \begin{lstlisting}[language=sh, gobble=3, tabsize=4, showstringspaces=false]
+	alice@raspberry: ~$ cat <fich1> 
+	\end{lstlisting}\\
+	\hline \textbf{head} &  Extraire les premières lignes d'un fichier & Afficher les <nb> premières lignes \begin{lstlisting}[language=sh, gobble=4, tabsize=4, showstringspaces=false]
+	alice@raspberry:~$ head -n <nb> <fich1> 
+	\end{lstlisting}\\
+	\hline \textbf{tail} & Extraire les dernières lignes. & Afficher les <nb> dernières lignes d'un fichier. \begin{lstlisting}[language=sh, gobble=4, tabsize=4, showstringspaces=false]
+	alice@raspberry:~$ tail -n <nb> <fich1> 
+	\end{lstlisting}\\
+	\hline \textbf{less} & Affiche le contenu d’un fichier page par page. & Les touches ↑ et ↓ permettent de se déplacer dans le texte. La touche q permet de quitter.\\
+	\hline
+\end{tabular}
+\subsection{Commandes utilisateurs et groupes}	
+\begin{tabular}{|c|p{0.35\textwidth}|p{0.49\textwidth}|}
+	\hline \rowcolor{lightgray}commande & description & options et exemples\\
+	\hline \textbf{id} & Permet de faire afficher le numéro - uid (comme user id) de l'utilisateur, son groupe principal - gid, et de quels autres groupes l'utilisateur fait aussi partie. &\begin{lstlisting}[language=sh, gobble=4, tabsize=4, showstringspaces=false]
+	alice@raspberry:~$ id toto 
+	\end{lstlisting}\\
+	\hline \textbf{passwd} & La commande passwd permet de changer son mot de passe. Ou, en root, changer le mot de passe d'un utilisateur (l'ancien mot de passe est alors demandé) &\begin{lstlisting}[language=sh, gobble=4, tabsize=4, showstringspaces=false]
+	alice@raspberry:~$ passwd 
+	\end{lstlisting}\\ 
+	\hline \textbf{who} & La commande who permet d’avoir des informations sur les différents utilisateurs connectés. & La première colonne indique le pseudo des utilisateurs connectés, la seconde colonne indique le tty (terminal) utilisé, la troisième colonne indique l’heure à laquelle l’utilisateur s’est connecté.\begin{lstlisting}[language=sh, gobble=4, tabsize=4, showstringspaces=false]
+	alice@raspberry:~$ who
+	renata   tty7   2018-05-01 15:55 (:0)
+	romain   tty8   2018-05-01 18:12 (:1)
+	\end{lstlisting}\\
+	\hline \textbf{su} & La commande "su" (Switch User) permet d'ouvrir une session avec l'IDentifiant d'un autre utilisateur & \begin{lstlisting}[language=sh, gobble=4, tabsize=4, showstringspaces=false]
+	alice@raspberry:~$ su toto
+	Password:
+	\end{lstlisting}\\ 
+	\hline
+\end{tabular}
+\subsection{La commande $man$}
+Indispensable, la commande $man$ permet de d'afficher le manuel d'une commande:
 \begin{lstlisting}[language=sh, frame = single]
-# vous deplacera dans votre répertoire (/home/utilisateur/dossier)
-alice@raspberry: ~$ cd /home/alice/documents  
-# Vous entrez dans le répertoire document :
-alice@raspberry: ~/documents$   
+alice@raspberry: ~$ man chmod
+#affiche le manuel de la commande chmod
 \end{lstlisting}
 
-Le chemin relatif dépend du répertoire courant où se trouve l'utilisateur Pour se déplacer dans un dossier de l'emplacement courant (par défaut home/utilisateur) vous employez cd suivi du nom du dossier : cd <dossier>. Si vous doutez du nom du dossier, tapez le début de son nom puis appuyez sur la touche Tabulation 
-
-\bigskip
-Pour "remonter" d'un répertoire (aller à son parent) on utilise la commande "cd .." 
-\begin{lstlisting}[language=sh, frame = single]
-alice@raspberry: ~/document$ cd ..  
-# Vous remontez vers le répertoire supérieur, votre "home
-alice@raspberry: ~$   
-\end{lstlisting}
 \end{document}
