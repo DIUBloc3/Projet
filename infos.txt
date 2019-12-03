@@ -1,0 +1,7 @@
+Bravo vous êtes déjà à l'étape 2 :
+les deux caractères suivants sont...
+un k, 
+et un 1.
+rendez vous maintenant dans de répertoire source du home
+de l'utilisateur dont l'ID est shannon.
+à vous de vous y rendre....

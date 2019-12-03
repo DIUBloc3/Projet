@@ -1,0 +1,27 @@
+<transmission>
+Bravo vous êtes parvenu à l'étape 5...
+On se rapproche du but...
+vous avez gagné 2 caractéres de plus :
+<code>
+p2
+</code>
+Bien maintenant voici les instructions suivantes :
+- vous allez devoir reprendre votre ID : $su <Votre_ID>
+- dans votre répertoire vous allez devoir modifiez code4.py:
+  Utiliser la commande $nano code4.py
+  qui ouvre un éditeur de texte.
+  remplacer la ligne code="qlBjwwtm5ulxB}tA>uu;9>" par 
+            code="(Z[hd_[hi0'*"
+  et utiliser un décalage de +10 dans la fonction code4.
+- ensuite un simple $python code4.py devrait vous aider
+- Si vous avez bien eu tous les caratéres vous devriez 
+maintenant pouvoir lancer :
+$su turing
+et vous rendre dans /home/turing/
+<attention>
+Avant de vous connecter sous l'ID turing il vous faut faire deux choses :
+- créer un répertoire nommé final dans votre home.
+- donner l'accès en écriture dans ce répertoire à tout le monde ,
+vous allez en avoir besoin.
+</attention>
+</transmission>

@@ -1,0 +1,14 @@
+Bravo vous êtes à l'avant dernière étape la plus dur ...
+
+mais il vous la fait pour trouver le mot de passe qui vous 
+permettra de sortir de la salle...:
+
+- copier les deux fichiers code_final.txt et code_final.sh dans votre répertoire home
+- donner des droits en lecture,écriture,exécution pour tous le monde à ces fichiers
+- reprennez votre ID de départ rendez vous dans votre répertoire home
+- Déplacez les deux fichiers précédents dans ce répertoire 
+- entrez dans le répertoire final que vous devez déjà avoir créé.
+- executer le script en tapant ./code_final.sh code_final.txt
+- le mot de passe s'affichera ...
+- précipitez vous vers le professeur et donnez lui le code, il vous laissera sortir...
+
