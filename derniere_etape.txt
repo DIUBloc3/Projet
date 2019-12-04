@@ -1,3 +1,4 @@
+<transmisssion>
 Bravo vous êtes à l'avant dernière étape la plus dur ...
 
 mais il vous la fait pour trouver le mot de passe qui vous 
@@ -11,4 +12,4 @@ permettra de sortir de la salle...:
 - executer le script en tapant ./code_final.sh code_final.txt
 - le mot de passe s'affichera ...
 - précipitez vous vers le professeur et donnez lui le code, il vous laissera sortir...
-
+</transmisssion>

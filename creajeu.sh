@@ -7,7 +7,7 @@
 
 
 FICH=$1
-#ADMIN="admin"
+
 echo $FICH
 groupadd NSI
 for i in `cat $FICH`
@@ -17,6 +17,7 @@ PASS=`echo $i | awk -F";" '{ print $2 }'`
 
 /usr/sbin/useradd $USER -s /bin/bash
 echo "$USER:$PASS"
+#( echo "$USER:$PASS/n") | chpasswd 1>/dev/null 2>&1
 
 echo "$USER:$PASS" | /usr/sbin/chpasswd 
 mkdir /home/$USER
@@ -34,12 +35,13 @@ chown -R $USER:NSI /home/$USER
 done
 cp etape3.txt /home/shannon/source
 cp code4.py /home/shannon/source
-chmod -R 745 /home/shannon
+chown -R shannon:NSI /home/shannon
+chmod -R 775 /home/shannon
 chmod 444 /home/shannon/source/code4.py
 
 cp etape5.txt /home/boole
-chown boole:NSI /home/boole/etape5.txt
-chmod 400 /home/boole/etape5.txt
+chown boole:NSI /home/boole/etape4.txt
+chmod 400 /home/boole/etape4.txt
 
 cp derniere_etape.txt /home/turing
 chown turing:NSI /home/turing/derniere_etape.txt

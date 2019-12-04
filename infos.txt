@@ -1,7 +1,13 @@
+<transmission></transmission>
 Bravo vous êtes déjà à l'étape 2 :
 les deux caractères suivants sont...
 un k, 
-et un 1.
-rendez vous maintenant dans de répertoire source du home
-de l'utilisateur dont l'ID est shannon.
-à vous de vous y rendre....
+et un 1 à ne pas confondre avec un l.
+
+rendez vous maintenant dans le répertoire /source du home
+de l'utilisateur dont le nom est celui de l'auteur de 
+de l'article A Mathematical Theory of Communication qui défini
+entre autre le bit comme la plus petite entité d'information.
+à vous de trouver son nom 
+et de vous rendre dans son home qui dispose de droits ... permissif
+</transmission>

@@ -1,16 +1,22 @@
-Bonjour,
-Cette Mission si vous l'acceptez, consiste à prendre le contrôle de ce ordinateur
-en suivant les indices que je vous ai laissé.
 
+<transmission>
+Bonjour,
+Cette Mission si vous l'acceptez, consiste à trouver le mot de passe sur cet ordinateur
+en suivant les indices que je vous ai laissé.
+                                     
 Déjà, si vous avez ouvert ce fichier c'est que vous avez réussi l'étape une.
 
-Pour prendre le contrôle de l'utilisateur vous allez devoir prendre le rôle de 
+Pour trouver le mot de passe, vous allez devoir prendre le rôle de 
 l'utilisateur dont ID est "turing".
 
 Suivez les indices que je vous ai laissé.. 
 
-Ah une si une dernière chose : la première lettre du mot de passe a pour code ASCII 100.
+Ah une si une dernière chose : la première lettre du mot de passe de 
+l'utilisateur turing a pour code ASCII 100.
 
-Vous pouvez maintenant aller à l'étape et consulter vos info personnelles qui se trouve dans 
+Vous pouvez maintenant aller à l'étape suivante 
+et consulter vos info personnelles qui se trouve dans 
 le répertoire /secret de votre home.
 
+a.turing
+</transmission>

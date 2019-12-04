@@ -1,19 +1,21 @@
 <transmission>
-Bravo vous êtes parvenu à l'étape 5...
+Bravo vous êtes parvenu à l'étape 4...
 On se rapproche du but...
 vous avez gagné 2 caractéres de plus :
 <code>
 p2
 </code>
 Bien maintenant voici les instructions suivantes :
-- vous allez devoir reprendre votre ID : $su <Votre_ID>
-- dans votre répertoire vous allez devoir modifiez code4.py:
-  Utiliser la commande $nano code4.py
+- vous allez devoir reprendre votre ID : $exit
+- dans votre répertoire effectuez une copie du fichier
+code4.py, vous nommerez la copie code5.py
+- vous allez devoir modifiez code5.py:
+  Utiliser la commande $nano code5.py
   qui ouvre un éditeur de texte.
   remplacer la ligne code="qlBjwwtm5ulxB}tA>uu;9>" par 
             code="(Z[hd_[hi0'*"
-  et utiliser un décalage de +10 dans la fonction code4.
-- ensuite un simple $python code4.py devrait vous aider
+  et utiliser un décalage de +10 dans l'appel de la fonction code4.
+- ensuite un simple $python code5.py devrait vous aider
 - Si vous avez bien eu tous les caratéres vous devriez 
 maintenant pouvoir lancer :
 $su turing

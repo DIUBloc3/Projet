@@ -1,0 +1,250 @@
+\documentclass[a4paper,10pt,addpoints]{exam}
+\usepackage{graphicx}
+\usepackage{calc}
+\usepackage{xcolor}
+\usepackage[utf8x]{inputenc}
+\usepackage{dirtree}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts,amssymb}
+\usepackage[margin=1cm,includeall]{geometry}
+\parindent=0cm
+\usepackage[french,ruled]{algorithm2e}
+\usepackage{listings}
+\usepackage{array,multirow,makecell}
+\usepackage{colortbl}
+\setcellgapes{1pt}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{subcaption}
+%\usepackage{fancyhdr}
+\usepackage{appendix}
+\usepackage{enumitem}
+\makegapedcells
+%\pagestyle{fancy}
+%\renewcommand{\headrulewidth}{2pt}
+%\renewcommand{\footrulewidth}{1pt}
+\pagestyle{headandfoot}
+\extraheadheight{1cm}
+\headrule
+\header{\includegraphics[scale=1.2]{logo.png}}
+				{}
+				{Première, Spécialité Numérique et Sciences Informatiques}
+\extrafootheight{1cm}
+\footrule
+\footer{\includegraphics[scale=0.20]{cc.png}}
+				{Séquence 4, Systèmes d'exploitation}
+				{Page \thepage /\numpages}
+				
+\newenvironment{oneparcheckboxescentering}{
+	\begingroup
+	\leftskip=80mm plus .5fil%
+	\rightskip=0mm plus -.5fil%
+	\parfillskip=0mm plus 1fil\relax
+	\begin{oneparcheckboxes}
+	}{
+	\end{oneparcheckboxes}
+	\par
+	\endgroup
+}
+\lstset{literate=
+	{á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+	{Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+	{à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+	{À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+	{ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+	{Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+	{â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+	{Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+	{Ã}{{\~A}}1 {ã}{{\~a}}1 {Õ}{{\~O}}1 {õ}{{\~o}}1
+	{œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+	{ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+	{ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+	{€}{{\euro}}1 {£}{{\pounds}}1 {«}{{\guillemotleft}}1
+	{»}{{\guillemotright}}1 {ñ}{{\~n}}1 {Ñ}{{\~N}}1 {¿}{{?`}}1
+	{~} {$\sim$}{1}
+}
+\title{\textbf{i'm root}\\un escape game pour découvrir la ligne de commande}
+\author{Lycée Français de Tananarive}
+\date{}
+
+\definecolor{blue}{RGB}{51,131,255}
+
+\begin{document}
+
+\maketitle
+\thispagestyle{headandfoot}
+
+\section{Objectif}
+
+\noindent\fcolorbox{black}{gray!30}{\parbox{\linewidth-2\fboxrule-2\fboxsep}
+	{Alan Turing est, entre autre, le génial mathématicien qui grâce à une machine déchiffra, lors de la seconde guerre mondiale le code énigma, utilisé par les nazis.\\
+	Ce jeu vous propose de retrouver le code caché par un utilisateur dont l'ID est turing au sein d'une Raspberry...	\textbf{Vous avez deux heures !} }}
+
+\section{Qui suis-je ?}
+	\begin{questions}
+		\boxedpoints
+	\question Mon login :
+	\makeemptybox{1cm}
+	\question Mon mot de passe : 
+	\makeemptybox{1cm}
+
+\section{Feuille de route.}
+\subsection{première étape : le point de départ}
+\setlength{\parindent}{6ex}
+\begin{itemize}[label=$\leadsto$, font=\LARGE \color{blue}]
+	\item Connectez vous sur la raspberry en utilisant le login/mot de passe communiqué par le professeur. la connection se fait en \textbf{SSH}, soit pas l'intermédiaire d'un terminal, soit en utilisant un logiciel dédié (\textit{Putty}, par exemple).
+	\item Chercher un fichier nommé \verb|bienvenue.txt|
+	\item Afficher le contenu de ce fichier.
+\end{itemize}
+	\question [1] Quel est le nom de l'utilisateur qui a caché le mot de passe sur la raspberry ?
+	\setlength\answerlinelength{8cm}
+	\answerline
+	\question [1] Quelle est l'id de l'utilisateur qui a caché le mot de passe sur la raspberry ?
+	\answerline
+	\question [1] Quelle la première lettre du mot de passe de cet utilisateur ?
+	\newline
+	\checkboxchar{$\Box$}
+	
+	\begin{oneparcheckboxescentering}
+	\choice a \choice d \choice g \choice 1 \choice c \choice b
+	\end{oneparcheckboxescentering}
+	\question [1] Quel est le chemin absolu du répertoire dans lequel vous devez vous rendre ?
+	\answerline
+	\bonusquestion [1] Quelle est la taille du fichier \verb|bienvenue.txt|  ?
+	\newline
+	
+	\begin{oneparcheckboxescentering}
+		\choice 720 Mo \choice 3 ko \choice 720 ko \choice 720 o 
+	\end{oneparcheckboxescentering}
+\subsection{deuxième étape : explorons les alentours}
+\begin{itemize}[label=$\leadsto$, font=\LARGE \color{blue}]
+	\item Trouvez le fichier \verb|infos.txt|
+	\item Affichez intégralement le contenu du fichier
+\end{itemize}
+
+		\setlength\answerlinelength{8cm}
+		\question [2] Quel est le nom de l'utilisateur dont parle le fichier \verb|infos.tx| ?
+		\answerline
+		\question [1]A quels groupes appartient cet utilisateur ?
+		\answerline
+		\question [1] Quels sont les droits des utilisateurs \verb|others| sur le répertoire home de cet utilisateur ?
+		\newline
+		\checkboxchar{$\Box$}
+		
+		\begin{oneparcheckboxescentering}
+			\choice - - - \choice r - -  \choice r w - \choice r - x \choice r w x 
+		\end{oneparcheckboxescentering}
+	
+		\bonusquestion [1] En quelle année a été écrit l'acticle \textit{A Mathematical Theory of Communication} ?
+		\answerline
+
+\subsection{troisième étape : un petit tour chez le voisin}
+\begin{itemize}[label=$\leadsto$, font=\LARGE \color{blue}]
+	\item Entrez dans le répertoire \verb|/home/$USER/source| où $\$USER$ est le nom de l'utilisateur découvert à l'étape précédente.
+	\item Trouvez le fichier \verb|etape3.txt|
+	\item Affichez le contenu du fichier en prenant bien soin de pouvoir en lire l'intégralité.
+	\item Suivez attentivement les instructions données dans le fichier \verb|etape3.txt|
+\end{itemize}
+\question [1]Quel est le format du fichier \verb|Code4| ?
+\newline
+
+\begin{oneparcheckboxescentering}
+	\choice .txt \choice .pdf  \choice .py \choice .odt \choice .sh 
+\end{oneparcheckboxescentering}
+\question [1] Quelle commande va vous permettre de copier ce fichier dans votre répertoire personnel ?
+\answerline
+\question[\half] Quelle commande va vous permettre de revenir directement dans votre répertoire personnel ?
+\answerline
+\question[\half] Quelle commande va vous permettre d'éxécuter le code python contenu dans le fichier \verb|code4| ?
+\answerline
+\question [1] Quel nom d'utilisateur renvoie l'exécution du script \verb|code4|?
+\answerline
+\bonusquestion [1] Quelle est la spécialité du mathématicien qui porte ce nom ?
+\newline
+
+\begin{oneparcheckboxescentering}
+	\choice l'analyse \choice la géomètrie  \choice l'algèbre \choice l'algorithmique 
+\end{oneparcheckboxescentering}
+\question[1] Quelle commande va vous permettre de vous connecter sous son nom ?
+\answerline
+\vfill
+\subsection{quatrième étape : entrée par effraction}
+\begin{itemize}[label=$\leadsto$, font=\LARGE \color{blue}]
+	\item Connectez vous sous le nom de l'utilisateur découvert précédemment, normalement vous devez aussi avoir obtenu son mot de passe.
+	\item Entrez dans le répertoire \verb|/home/$USER/source| où $\$USER$ est le nom de l'utilisateur découvert à l'étape précédente.
+	\item Trouvez le fichier \verb|etape4.txt|
+	\item Affichez le contenu du fichier.
+\end{itemize}
+\question [1] Quels sont les caractères du code de l'utilisateur \verb|turing| que vous possédez déjà ?
+\answerline
+\question [1] Qu'est ce que \verb|nano| ?
+\newline
+
+\begin{oneparcheckboxescentering}
+	\choice un éditeur de texte \choice un tableur/grapheur  \choice une calculatrice \choice un logiciel de dessin
+\end{oneparcheckboxescentering}
+\question [\half] Quelle commande permet de revenir à une session à votre nom ?
+\answerline
+\question [1] Quelle commande va vous permettre de créer \verb|code5.py|, la copie de \verb|code4.py|?
+\answerline
+\question [\half] Quelle valeur va prendre la variable \verb|code| dans le script \verb|code5.py| une fois que vous l'aurez modifié ?
+\answerline
+\subsection{Cinquième étape : modifier pas si simple !  }
+\begin{itemize}[label=$\leadsto$, font=\LARGE \color{blue}]
+	\item Vous devez être dans votre répertoire et vous devez avoir créer une copie du fichier \verb|code4.py|
+	\item Modifiez le fichier \verb|code5.py| que vous venez de créer en suivant les instructions que vous venez de découvrir
+	\item Avez vous pensez à vérifier les droits du fichiers \verb|code5.py| avant de tenter de le modifier ?
+	\item Vous devriez avoir maintenant le mot de passe de l'utilisateur \verb|turing|.
+	\item N'oubliez pas de créer un sous-répertoire \verb|final| dans votre espace personnel, et de lui donner des droits pour un accès à tout le monde, car vous allez devoir y copier des fichiers alors que vous serez sous une session \verb|turing|
+\end{itemize}
+\question [1] Quel est le type de la variable \verb|maping| dans le script python \verb|code5.py| ?
+\newline
+
+\begin{oneparcheckboxescentering}
+	 \choice une liste  \choice un dictionnaire \choice un tuple \choice une chaîne de caractères
+\end{oneparcheckboxescentering}
+\question [1] Quelle commande faut-il entrer pour pouvoir modifier le fichier \verb|code5.py|?
+\answerline
+\question [1] Quel est l'encodage utilisé dans le fichier \verb|code5.py| ?
+\newline
+
+\begin{oneparcheckboxescentering}
+	\choice ASCII  \choice unicode \choice latin-1 \choice utf8
+\end{oneparcheckboxescentering}
+\question [1] De quels types sont les paramètres passés à la fonction \verb|code4(phrase,decalage)| ?
+\answerline
+\question [1] Quelle combinaison de touches permet de quitter \verb|nano| ?
+\answerline
+\question [1] Quel est le mot de passe complet de l'utilisateur turing?
+\answerline
+\question [1] Quelle commande vous a permis de créer le répertoire \verb|final| ?
+\answerline
+\question [1] Quelle commande vous a permis de changer les droits sur ce dossier ?
+\answerline
+
+
+\subsection{Sixième étape : visite chez le maitre}
+\begin{itemize}[label=$\leadsto$, font=\LARGE \color{blue}]
+	\item Entrez dans le répertoire personnel de l'utilisateur \verb|turing|. Vous aurez besoin de faire un \verb|su turing| et de rentrer le mot de passe que vous devez déjà posséder.
+	\item Les instructions se trouvent dans un ficher \verb|derniere_etape.txt| que vous devrez afficher.
+	\item Vous devez trouver deux fichiers, \verb|code_final.txt| et \verb|code_final.sh|
+	\item Vous devez maintenant copier dans votre répertoire personnel, dans le dossier \verb|final| que vous avez normalement déjà crée.
+	\item N'oubliez pas de rendre le script \verb|code_final.sh| exécutable !
+\end{itemize}
+\question [1] On considère le fichier \verb|code_final.sh|, dans quel langage est écrit ce script ?
+\answerline.
+\question [1] Quelle commande va vous permettre de rendre ce script exécutable pour vous ?
+\answerline
+\question [1] Comment lance-t-on un tel script en ligne de commande ?
+\answerline
+\question  [2] Quel est le code qui va vous permettre de sortir de la salle que le professeur a fermé à clef ?
+\answerline.
+
+\section{Votre résultat}
+\begin{center}
+	\multirowgradetable{3}[questions]
+\end{center}
+
+	\end{questions}
+\end{document}
