@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.24)  4 DEC 2019 06:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=pdflatex 2019.10.24)  5 DEC 2019 12:27
 entering extended mode
 **"./3. Escape Game.tex"
 ("3. Escape Game.tex"
@@ -674,11 +674,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--165
 
 File: logo.png Graphic file (type png)
 <use logo.png>
-Package pdftex.def Info: logo.png  used on input line 178.
+Package pdftex.def Info: logo.png  used on input line 181.
 (pdftex.def)             Requested size: 68.65613pt x 38.30289pt.
 File: cc.png Graphic file (type png)
 <use cc.png>
-Package pdftex.def Info: cc.png  used on input line 178.
+Package pdftex.def Info: cc.png  used on input line 181.
 (pdftex.def)             Requested size: 80.9008pt x 28.30524pt.
 [2]
 Underfull \hbox (badness 10000) in paragraph at lines 181--183
@@ -720,11 +720,11 @@ This exam has a total of 3 bonus points.
 Here is how much of TeX's memory you used:
  11232 strings out of 492452
  163041 string characters out of 3129801
- 298351 words of memory out of 3000000
+ 298361 words of memory out of 3000000
  15421 multiletter control sequences out of 15000+200000
  18696 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,15n,46p,338b,622s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,15n,46p,338b,615s stack positions out of 5000i,500n,10000p,200000b,50000s
  <C:\Users\JOCELIN\AppData\Local\MiKTeX\2.9\fonts/pk/lj
 four/jknappen/ec/dpi600\ectt1000.pk> <C:\Users\JOCELIN\AppData\Local\MiKTeX\2.9
 \fonts/pk/ljfour/jknappen/ec/dpi600\ecti1000.pk> <C:\Users\JOCELIN\AppData\Loca
@@ -740,9 +740,9 @@ X\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1000.pk><D:/Program Files/MiKTeX 2
 /type1/public/amsfonts/cm/cmr10.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/pu
 blic/amsfonts/cm/cmr7.pfb><D:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
 nts/symbols/msam10.pfb>
-Output written on "3. Escape Game.pdf" (4 pages, 145246 bytes).
+Output written on "3. Escape Game.pdf" (4 pages, 147147 bytes).
 PDF statistics:
- 307 PDF objects out of 1000 (max. 8388607)
+ 312 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

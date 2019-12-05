@@ -14,10 +14,11 @@ for i in `cat $FICH`
 do
 USER=`echo $i | awk -F";" '{ print $1 }'`
 PASS=`echo $i | awk -F";" '{ print $2 }'`
-
-/usr/sbin/useradd $USER -s /bin/bash
+# echo "secretpassword" | openssl aes-256-cbc -a -salt
+/usr/sbin/useradd $USER -s /bin/bash 
 echo "$USER:$PASS"
-#( echo "$USER:$PASS/n") | chpasswd 1>/dev/null 2>&1
+# echo "$PASS\n$PASS" | passwd $USER 
+
 
 echo "$USER:$PASS" | /usr/sbin/chpasswd 
 mkdir /home/$USER
@@ -39,14 +40,14 @@ chown -R shannon:NSI /home/shannon
 chmod -R 775 /home/shannon
 chmod 444 /home/shannon/source/code4.py
 
-cp etape5.txt /home/boole
+cp etape4.txt /home/boole/
 chown boole:NSI /home/boole/etape4.txt
 chmod 400 /home/boole/etape4.txt
 
-cp derniere_etape.txt /home/turing
+cp derniere_etape.txt /home/turing/
 chown turing:NSI /home/turing/derniere_etape.txt
 chmod 400 /home/turing/derniere_etape.txt
-cp code_final.sh /home/turing
+cp code_final.sh /home/turing/
 chown turing:NSI /home/turing/code_final.sh
 chmod 400 /home/turing/code_final.sh
 cp code_final.txt /home/turing

@@ -12,7 +12,7 @@ code4.py, vous nommerez la copie code5.py
 - vous allez devoir modifiez code5.py:
   Utiliser la commande $nano code5.py
   qui ouvre un éditeur de texte.
-  remplacer la ligne code="qlBjwwtm5ulxB}tA>uu;9>" par 
+- Remplacer dans code5.py la ligne code="qlBjwwtm5ulxB}tA>uu;9>" par 
             code="(Z[hd_[hi0'*"
   et utiliser un décalage de +10 dans l'appel de la fonction code4.
 - ensuite un simple $python code5.py devrait vous aider
