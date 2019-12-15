@@ -15,12 +15,12 @@ do
 USER=`echo $i | awk -F";" '{ print $1 }'`
 PASS=`echo $i | awk -F";" '{ print $2 }'`
 # echo "secretpassword" | openssl aes-256-cbc -a -salt
-/usr/sbin/useradd $USER -s /bin/bash 
+/usr/sbin/useradd $USER -s /bin/bash -p $(mkpasswd $PASS)
 echo "$USER:$PASS"
-# echo "$PASS\n$PASS" | passwd $USER 
+#echo "$PASS\n$PASS" | passwd $USER 
 
 
-echo "$USER:$PASS" | /usr/sbin/chpasswd 
+#echo "${USER}:${PASS}" | /usr/sbin/chpasswd 
 mkdir /home/$USER
 chown $USER /home/$USER
 adduser $USER NSI
