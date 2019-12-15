@@ -1,4 +1,5 @@
 # NSI Bloc 3
+# Jeu s'appelle root
 # Un escape game pour apprendre la ligne de commande #
 
 ## Objectifs liès au programme de première Spé NSI
