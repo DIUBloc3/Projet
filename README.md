@@ -32,7 +32,7 @@ Par défaut la commande n'est pas installée, elle s'installe avec le paquetage 
 
 ### 1.4 Installation du jeu
 - Transférer l'intégralité des fichiers du dossier `code et fichiers`, rendez exécutable `creajeu.sh`
-- Excécuter le script `./creajeu.sh Classeur1.csv`
+- Excécuter le script `./creajeu.sh Classeur1.csv` connecté en root
 
 ## 2 Scénario de la séquence
 Les élèves disposent d'un login/mdp sur la raspberry, il doit rechercher/déplacer/copier/exécuter différents fichiers en ligne de commande qui vont leur permettre de recomposer le mot de passe du l'utilisateur Turing qui va leur permettre de trouver le code final.
