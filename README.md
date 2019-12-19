@@ -1,4 +1,6 @@
 # NSI Bloc 3
+## Jean-Luc Bosser et Jocelin Devalette
+## Lycée Français de Tananarive.
 # Jeu s'appelle root
 # Un escape game pour apprendre la ligne de commande #
 
