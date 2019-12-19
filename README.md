@@ -34,6 +34,9 @@ Par défaut la commande n'est pas installée, elle s'installe avec le paquetage 
 - Transférer l'intégralité des fichiers du dossier `code et fichiers`, rendez exécutable `creajeu.sh`
 - Excécuter le script `./creajeu.sh Classeur1.csv` connecté en root
 
+### 1.5 Suppression du jeu
+Il est poosible de supprimer le jeu en utilisant le script `./supprime_jeu.sh Classeur1.csv`, pour pouvoir le reinstaller pour une nouvelle classe.
+
 ## 2 Scénario de la séquence
 Les élèves disposent d'un login/mdp sur la raspberry, il doit rechercher/déplacer/copier/exécuter différents fichiers en ligne de commande qui vont leur permettre de recomposer le mot de passe du l'utilisateur Turing qui va leur permettre de trouver le code final.
 
